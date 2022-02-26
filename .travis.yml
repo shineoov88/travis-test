@@ -20,3 +20,19 @@ notifications:
   email:
     recipients:
       - nisiohka@naver.com
+
+before_deploy:
+  - zip -r travis-test *
+  - mkdir -p deploy
+  - mv travis-test.zip deploy/travis-test.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEy
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: travis-test-temp
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private
+    local_dir: deploy # before_deploy 에서 생성한 디렉토리
+    wait-unitl-deployed: true
