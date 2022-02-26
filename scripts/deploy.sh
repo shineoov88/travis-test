@@ -6,7 +6,7 @@ PROJECT_NAME=travis-test
 
 echo "> Build 파익 복사"
 
-cp $REPOSITORY/zip/*.jar @REPOSITORY/
+cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동죽인 애플리케이션 pid 확인"
 
