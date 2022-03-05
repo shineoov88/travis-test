@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 ABSPATH=$(readlink -f $0)
-
 ABSDIR=$(dirname $ABSPATH)
-
 source ${ABSDIR}/profile.sh
 
 echo "> $IDLE_PORT 에서 구동죽인 애플리케이션 pid 확인"
