@@ -8,6 +8,6 @@ public class SampleController {
 
     @GetMapping("/")
     public String main() {
-        return "MAIN34!!";
+        return "MAIN345!!";
     }
 }
